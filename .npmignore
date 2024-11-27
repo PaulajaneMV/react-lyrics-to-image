@@ -1,0 +1,9 @@
+node_modules/
+build/
+.git/
+.github/
+.vscode/
+.env
+README.md
+yarn.lock
+package-lock.json
