@@ -1,0 +1,182 @@
+/* General Styling */
+.lyrics-page {
+    height: 100vh;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header Styling */
+  .lyrics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .lyrics-logo {
+    max-width: 70px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .lyrics-title {
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Burger Menu */
+  .burger-menu {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Content Styling */
+  .lyrics-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 20px;
+  }
+  
+  .input-section,
+  .result-section {
+    flex: 1;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-title,
+  .output-title {
+    margin-bottom: 15px;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .lyrics-input {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .generate-button {
+    background-color: #3bcff8;
+    color: white;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .generate-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* Video Section */
+  .video-container {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .generated-video {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .action-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .download-button,
+  .reset-button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .download-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .download-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  .reset-button {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .reset-button:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+  }
+  
+  /* Footer Styling */
+  .lyrics-footer {
+    text-align: center;
+    background: #ffffff;
+    padding: 15px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Dropdown Menu Styling */
+.ant-dropdown-menu {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+  }
+  
+  .ant-dropdown-menu-item {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  .ant-dropdown-menu-item:hover {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .burger-menu {
+    color: #333;
+    font-size: 18px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .burger-menu:hover {
+    color: #007bff;
+  }
+  

@@ -1,0 +1,168 @@
+/* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Layout Styles */
+.landing-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  max-width: 80px;
+  margin-top: 25px;
+}
+
+.menu-items button {
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  border: none;
+  background: none;
+  margin-right: 20px;
+}
+
+.menu-items button:hover {
+  color: #ffd700;
+}
+
+.landing-login-button {
+  background-color: transparent;
+  outline: none;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+
+.landing-login-button:hover {
+  background-color: #00e5ff;
+}
+
+/* Content Styles */
+.landing-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 40px;
+  background: linear-gradient(to bottom right, #f0f4f8, #ffffff);
+}
+
+.text-section {
+  flex: 1;
+  max-width: 70%;
+  text-align: left;
+}
+
+.landing-title {
+  font-size: 3.5rem;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.landing-title .highlight {
+  color: #00e5ff;
+}
+
+.landing-subtitle {
+  font-size: 1.2rem;
+  color: #555555;
+  margin-bottom: 30px;
+}
+
+.landing-button {
+  background-color: #00e5ff;
+  color: white;
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.landing-button:hover {
+  background-color: #0073e6;
+  transform: translateY(-3px);
+}
+
+/* Image Section */
+.image-section {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  margin-left: 900px;
+  margin-top: -385px;
+  position: absolute;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.carousel-image {
+  width: 94%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Footer Styles */
+.landing-footer {
+  text-align: center;
+  background: #1a1a1a;
+  color: white;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+/* Modal Styles */
+.login-modal .ant-modal-content {
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.login-modal-content {
+  text-align: center;
+}
+
+.login-logo img {
+  max-width: 120px;
+  margin-bottom: 20px;
+}
+
+.login-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.login-subtitle {
+  color: #666;
+}
+
+.login-button {
+  background-color: #00e5ff;
+  border: none;
+}
+
+.login-button:hover {
+  background-color: #0073e6;
+}

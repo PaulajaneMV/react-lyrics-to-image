@@ -1,0 +1,80 @@
+.faqs-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+  }
+  
+  .faqs-header {
+    background-color: #1a1a1a;
+    color: white;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.5rem;
+  }
+  
+  .back-arrow {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 20px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .back-arrow:hover {
+    color: #ffd700;
+  }
+  
+  .faqs-content {
+    flex: 1;
+    padding: 40px 20px;
+  }
+  
+  .faqs-section {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faqs-title {
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+  }
+  
+  .faqs-collapse .ant-collapse-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    transition: box-shadow 0.3s;
+  }
+  
+  .faqs-collapse .ant-collapse-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faqs-collapse .ant-collapse-header {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  
+  .faqs-collapse .ant-collapse-content {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .faqs-footer {
+    text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px 0;
+  }
+  
