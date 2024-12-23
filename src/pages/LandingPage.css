@@ -108,7 +108,7 @@ body {
   flex: 1;
   max-width: 50%;
   display: flex;
-  margin-left: 900px;
+  margin-left: 1020px;
   margin-top: -385px;
   position: absolute;
 }
@@ -164,5 +164,45 @@ body {
 }
 
 .login-button:hover {
+  background-color: #0073e6;
+}
+
+.signup-modal .ant-modal-content {
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.signup-modal-content {
+  text-align: center;
+}
+
+.signup-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.signup-form .ant-form-item {
+  margin-bottom: 15px;
+}
+
+.signup-button {
+  background-color: #00e5ff;
+  color: white;
+  border: none;
+}
+
+.signup-button:hover {
+  background-color: #0073e6;
+}
+
+.landing-signup-button {
+  background-color: #00e5ff;
+  color: white;
+  border-radius: 20px;
+  margin-left: 10px;
+}
+
+.landing-signup-button:hover {
   background-color: #0073e6;
 }

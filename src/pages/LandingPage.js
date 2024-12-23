@@ -12,11 +12,21 @@ const { Title, Paragraph } = Typography;
 
 const LandingPage = () => {
   const navigate = useNavigate();
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isLoginModalVisible, setIsLoginModalVisible] = useState(false);
+  const [isSignUpModalVisible, setIsSignUpModalVisible] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  const showLoginModal = () => setIsModalVisible(true);
-  const handleModalCancel = () => setIsModalVisible(false);
+  const showLoginModal = () => setIsLoginModalVisible(true);
+  const handleLoginModalCancel = () => setIsLoginModalVisible(false);
+
+  const showSignUpModal = () => setIsSignUpModalVisible(true);
+  const handleSignUpModalCancel = () => setIsSignUpModalVisible(false);
+
+  const handleSignUpFinish = (values) => {
+    console.log("Sign-Up Successful!", values);
+    alert("Account created successfully!");
+    setIsSignUpModalVisible(false); // Close the modal after sign-up
+  };
 
   // Ensure images are loaded before rendering the carousel
   useEffect(() => {
@@ -59,6 +69,13 @@ const LandingPage = () => {
           >
             Login
           </Button>
+          <Button
+            type="default"
+            className="landing-signup-button"
+            onClick={showSignUpModal}
+          >
+            Sign Up
+          </Button>
         </div>
       </Header>
       <Content className="landing-content">
@@ -77,7 +94,7 @@ const LandingPage = () => {
               className="landing-button"
               onClick={showLoginModal}
             >
-              Create Now
+              Get Started
             </Button>
           </div>
           <div className="image-section">
@@ -103,10 +120,11 @@ const LandingPage = () => {
         Lyrics to Video App ©2024 | Designed for creators.
       </Footer>
 
+      {/* Login Modal */}
       <Modal
-        visible={isModalVisible}
+        visible={isLoginModalVisible}
         footer={null}
-        onCancel={handleModalCancel}
+        onCancel={handleLoginModalCancel}
         centered
         className="login-modal"
       >
@@ -151,8 +169,94 @@ const LandingPage = () => {
             </Form.Item>
           </Form>
           <Paragraph className="login-footer">
-            Don't have an account? <a href="/register">Sign Up</a>
+            Don't have an account?{" "}
+            <Button
+              type="link"
+              className="signup-link"
+              onClick={() => {
+                setIsLoginModalVisible(false);
+                showSignUpModal();
+              }}
+            >
+              Sign Up
+            </Button>
           </Paragraph>
+        </div>
+      </Modal>
+
+      {/* Sign-Up Modal */}
+      <Modal
+        visible={isSignUpModalVisible}
+        footer={null}
+        onCancel={handleSignUpModalCancel}
+        centered
+        className="signup-modal"
+      >
+        <div className="signup-modal-content">
+          <div className="signup-logo">
+            <img src={logo} alt="Logo" />
+          </div>
+          <Title level={2} className="signup-title">
+            Create Your Account
+          </Title>
+          <Form
+            name="signup-form"
+            layout="vertical"
+            onFinish={handleSignUpFinish}
+            className="signup-form"
+          >
+            <Form.Item
+              label="Username"
+              name="username"
+              rules={[{ required: true, message: "Please enter your username!" }]}
+            >
+              <Input placeholder="Enter your username" />
+            </Form.Item>
+            <Form.Item
+              label="Email"
+              name="email"
+              rules={[
+                { required: true, message: "Please enter your email!" },
+                { type: "email", message: "Please enter a valid email!" },
+              ]}
+            >
+              <Input placeholder="Enter your email" />
+            </Form.Item>
+            <Form.Item
+              label="Password"
+              name="password"
+              rules={[{ required: true, message: "Please enter your password!" }]}
+            >
+              <Input.Password placeholder="Enter your password" />
+            </Form.Item>
+            <Form.Item
+              label="Confirm Password"
+              name="confirmPassword"
+              dependencies={["password"]}
+              rules={[
+                { required: true, message: "Please confirm your password!" },
+                ({ getFieldValue }) => ({
+                  validator(_, value) {
+                    if (!value || getFieldValue("password") === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(new Error("Passwords do not match!"));
+                  },
+                }),
+              ]}
+            >
+              <Input.Password placeholder="Confirm your password" />
+            </Form.Item>
+            <Form.Item>
+              <Button
+                type="primary"
+                htmlType="submit"
+                className="signup-button"
+              >
+                Sign Up
+              </Button>
+            </Form.Item>
+          </Form>
         </div>
       </Modal>
     </Layout>

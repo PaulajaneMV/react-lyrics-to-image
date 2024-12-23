@@ -1,40 +1,8 @@
 {
-  "name": "react-lyrics-to-image", 
+  "name": "react-lyrics-to-image",
   "version": "1.0.0",
-  "private": false,
-  "description": "A React template for creating lyric video maker applications.",
+  "description": "A React app for generating lyric-based images",
   "main": "src/index.js",
-  "files": [
-    "src",
-    "public",
-    "package.json",
-    "README.md"
-  ],
-  "keywords": [
-    "react",
-    "lyrics",
-    "video-maker",
-    "template"
-  ],
-  "author": "Your Name or Organization",
-  "license": "MIT",
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.6.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "antd": "^5.22.1",
-    "axios": "^1.7.7",
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
-    "express": "^4.21.1",
-    "firebase": "^11.0.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -42,14 +10,40 @@
     "eject": "react-scripts eject",
     "prepare": "npm run build"
   },
+  "keywords": [
+    "react",
+    "lyrics",
+    "image-generator",
+    "npm-template"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/react-lyrics-to-image.git"
+    "url": "https://github.com/PaulajaneMV/react-lyrics-to-image.git"
   },
+  "author": "Paula Jane MV",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/your-username/react-lyrics-to-image/issues"
+    "url": "https://github.com/PaulajaneMV/react-lyrics-to-image/issues"
   },
-  "homepage": "https://github.com/your-username/react-lyrics-to-image#readme",
+  "homepage": "https://github.com/PaulajaneMV/react-lyrics-to-image#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "antd": "^5.22.1",
+    "axios": "^1.7.7",
+    "firebase": "^11.0.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.28.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
