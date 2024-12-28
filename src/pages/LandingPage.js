@@ -5,7 +5,7 @@ import logo from "../assets/LogoLyricsApp.png";
 import music1 from "../assets/Music1.jpg";
 import music2 from "../assets/Music2.jpg";
 import music3 from "../assets/Music3.jpg";
-import "./LandingPage.css";
+import "../styles/LandingPage.css";
 
 const { Header, Content, Footer } = Layout;
 const { Title, Paragraph } = Typography;

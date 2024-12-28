@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Input, Button, Typography } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import "./SignUpPage.css";
+import "../styles/SignUpPage.css";
 import logo from "../assets/LogoLyricsApp.png";
 
 const { Title, Text } = Typography;

@@ -2,7 +2,7 @@ import React from "react";
 import { Layout, Typography, Collapse, Button } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import "./FAQsPage.css";
+import "../styles/FAQsPage.css";
 
 const { Header, Content, Footer } = Layout;
 const { Title } = Typography;

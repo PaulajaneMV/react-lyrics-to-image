@@ -7,11 +7,12 @@ import {
   Dropdown,
   Menu,
   Spin,
-  Image,
+  message,
+  notification,
 } from "antd";
 import { DownOutlined, MenuOutlined } from "@ant-design/icons";
 import axios from "axios";
-import "./LyricsPage.css";
+import "../styles/LyricsPage.css";
 import Logo from "../assets/LogoLyricsApp.png";
 
 const { Header, Content, Footer } = Layout;
@@ -20,54 +21,65 @@ const { Title } = Typography;
 const LyricsPage = () => {
   const [lyrics, setLyrics] = useState("");
   const [loading, setLoading] = useState(false);
-  const [imageUrl, setImageUrl] = useState("");
+  const [videoUrl, setVideoUrl] = useState("");
 
-  const handleGenerateImage = async () => {
+  const handleGenerateVideo = async () => {
     if (!lyrics.trim()) {
-      alert("Please enter some lyrics!");
+      notification.warning({
+        message: "Missing Lyrics",
+        description: "Please enter some lyrics to generate a video.",
+      });
       return;
     }
 
     setLoading(true);
     try {
       await axios.post("http://localhost:5000/webhook", { lyrics });
-      alert("Lyrics sent! Waiting for the video to be generated...");
+      message.info("Lyrics sent! Waiting for the video to be generated...");
     } catch (error) {
       console.error("Error sending lyrics:", error);
-      alert("Failed to send lyrics. Please try again.");
+      notification.error({
+        message: "Failed to Send Lyrics",
+        description: "An error occurred while sending the lyrics. Please try again.",
+      });
     } finally {
       setLoading(false);
     }
   };
 
   const handleDownload = () => {
-    if (imageUrl) {
+    if (videoUrl) {
       const link = document.createElement("a");
-      link.href = imageUrl;
+      link.href = videoUrl;
       link.download = "generated-video.mp4";
       link.click();
     } else {
-      alert("No video to download.");
+      notification.warning({
+        message: "No Video Available",
+        description: "Please generate a video before downloading.",
+      });
     }
   };
 
   const handleReset = () => {
     setLyrics("");
-    setImageUrl("");
+    setVideoUrl("");
+    message.success("Fields reset successfully.");
   };
 
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
-        const response = await axios.get("http://localhost:5000/latest-image");
-        if (response.data.imageUrl) {
-          setImageUrl(response.data.imageUrl);
+        const response = await axios.get("http://localhost:5000/latest-video");
+        if (response.data.videoUrl) {
+          setVideoUrl(response.data.videoUrl);
+          message.success("Video generation complete!");
           clearInterval(interval);
         }
       } catch (error) {
-        console.error("Error fetching latest image:", error);
+        console.error("Error fetching the latest video:", error);
       }
-    }, 3000);
+    }, 5000); // Check every 5 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -117,7 +129,7 @@ const LyricsPage = () => {
           />
           <Button
             type="primary"
-            onClick={handleGenerateImage}
+            onClick={handleGenerateVideo}
             disabled={loading}
             className="generate-button"
           >
@@ -130,12 +142,11 @@ const LyricsPage = () => {
           </Title>
           <div className="video-container">
             {loading && <Spin size="large" />}
-            {imageUrl ? (
-              <Image
-                src={imageUrl}
-                alt="Generated Video"
-                className="generated-video"
-              />
+            {videoUrl ? (
+              <video controls className="generated-video">
+                <source src={videoUrl} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             ) : (
               <div className="placeholder">
                 <p className="placeholder-title">Generated video will appear here</p>

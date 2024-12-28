@@ -2,7 +2,7 @@ import React from "react";
 import { Layout, Typography, Card, Button } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import "./PricingPage.css";
+import "../styles/PricingPage.css";
 
 const { Header, Content, Footer } = Layout;
 const { Title } = Typography;
